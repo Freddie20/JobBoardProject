@@ -18,3 +18,7 @@ __pycache__/
 
 # Ignore MacOS system files
 .DS_Store
+
+# Ignore main notebook
+main.ipynb 
+
