@@ -21,4 +21,5 @@ __pycache__/
 
 # Ignore main notebook
 main.ipynb 
+optimised.ipynb
 
