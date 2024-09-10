@@ -17,18 +17,18 @@ This project showcases an automated web scraping pipeline built with AWS Lambda 
 
 ### Technologies Used 💻
 ```markdown
-| **Technology**        | **Description**                                                                 |
+| Technology      | Description                                                                 |
 |-----------------------|---------------------------------------------------------------------------------|
-| **Python**            | The core programming language used for the scraping scripts.                    |
-| **Selenium**          | For automating browser interactions and handling dynamically loaded content.    |
-| **BeautifulSoup**     | For parsing HTML and extracting data from web pages.                            |
-| **XPath & CSS Selectors** | For precise and flexible data extraction from HTML elements.               |
-| **HTML, CSS, JavaScript** | For building the static website interface to display job listings.          |
-| **AWS Lambda**        | To run the scraping logic as a serverless function in the cloud.                 |
-| **Docker**            | Used to package and deploy the Lambda function with all dependencies.            |
-| **AWS S3**            | For storing job data and hosting the static website.                            |
-| **AWS CloudWatch**     | To schedule automated scraping tasks at regular intervals.                      |
-| **AWS SNS**           | To send job alerts to users via email or SMS.                                    |                               |
+| Python            | The core programming language used for the scraping scripts.                    |
+| Selenium         | For automating browser interactions and handling dynamically loaded content.    |
+| BeautifulSoup     | For parsing HTML and extracting data from web pages.                            |
+| XPath & CSS Selectors | For precise and flexible data extraction from HTML elements.               |
+| HTML, CSS, JavaScript | For building the static website interface to display job listings.          |
+| AWS Lambda        | To run the scraping logic as a serverless function in the cloud.                 |
+| Docker            | Used to package and deploy the Lambda function with all dependencies.            |
+| AWS S3            | For storing job data and hosting the static website.                            |
+| AWS CloudWatch     | To schedule automated scraping tasks at regular intervals.                      |
+| AWS SNS           | To send job alerts to users via email or SMS.                                    |                               |
 ```
 
 Key Features 🔑
