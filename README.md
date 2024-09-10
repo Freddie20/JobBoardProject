@@ -1,13 +1,21 @@
-# JobBoard Project
+# 🌐 AWS Lambda Web Scraping Project
 
 ## 🕸️ Web Scraping with AWS Lambda, S3, SNS & Static Website
 
-### Project Overview
+### Project Overview 🎯
 
-This project implements a web scraping pipeline using AWS Lambda, Docker, S3, CloudWatch, and SNS. The scraped data is then displayed on a static website hosted in an S3 bucket. This project scrapes job postings from various websites, stores them in JSON format in Amazon S3, sends job alerts using SNS, and displays the job data on a static website hosted in S3.
+This project showcases an automated web scraping pipeline built with AWS Lambda and Docker, designed to collect job postings from various platforms. The scraped data is then stored in Amazon S3 and made accessible through a static website. Additionally, job alerts are sent to users via Amazon SNS, providing real-time notifications.
+
+**Key components include:**
+
+- Scraping job postings from multiple sources using Lambda Docker containers.
+- Storing the scraped data as JSON files in Amazon S3.
+- Setting up a static website hosted on S3 to display the job listings.
+- Using Amazon SNS to send job alerts based on specific keywords like Data Engineer or ML Engineer.
+- Scheduling automated scraping jobs using AWS CloudWatch for regular updates.
 
 
-### Technologies Used
+### Technologies Used 💻
 
 - **Python**: The core programming language used for the scraping scripts.
 - **Selenium**: For automating browser interactions and handling dynamically loaded content.
@@ -20,6 +28,16 @@ This project implements a web scraping pipeline using AWS Lambda, Docker, S3, Cl
 - **AWS CloudWatch**: To schedule automated scraping.
 - **AWS SNS**: To send job alerts to users.
 
+Key Features 🔑
+
+- Serverless & Scalable: Scrapes jobs from multiple websites using Dockerized Lambda containers.
+- Real-Time Alerts: Sends job alerts via Amazon SNS when new jobs match specific keywords.
+- Automated Scheduling: Periodic scraping using AWS CloudWatch to keep job listings up-to-date.
+- Static Website: Hosted on Amazon S3, displaying job listings in a clean, accessible format.
+
+### Live Demo 🌐
+
+- Static Website URL: Visit the Job Board 
 
 ### Prerequisites
 
@@ -164,8 +182,9 @@ With this setup, you can scrape jobs from websites, automatically trigger the sc
 
 Feel free to explore the code and adapt it to your needs. Let us know if you encounter any issues or have ideas for improvements! 🚀
 
-**Author:**
+**Author:** ✍️
 
 - Freda Victor
 - Project Blog: [GitHub Repository Link]
 - Date: September 2024
+
