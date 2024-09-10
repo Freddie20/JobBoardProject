@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Board</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .batch-section {
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Job Board</h1>
+    <p>Latest Job Postings from All Batches</p>
+
+    <!-- Batch 1 Jobs -->
+    <div class="batch-section">
+        <h2>Batch 1 Jobs</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Job Title</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody id="job-list-batch1"></tbody>
+        </table>
+    </div>
+
+    <!-- Batch 2 Jobs -->
+    <div class="batch-section">
+        <h2>Batch 2 Jobs</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Job Title</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody id="job-list-batch2"></tbody>
+        </table>
+    </div>
+
+    <!-- Additional batches (Batch 3-6) can follow the same pattern -->
+    <div class="batch-section">
+        <h2>Batch 3 Jobs</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Job Title</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody id="job-list-batch3"></tbody>
+        </table>
+    </div>
+
+    <div class="batch-section">
+        <h2>Batch 4 Jobs</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Job Title</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody id="job-list-batch4"></tbody>
+        </table>
+    </div>
+
+    <div class="batch-section">
+        <h2>Batch 5 Jobs</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Job Title</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody id="job-list-batch5"></tbody>
+        </table>
+    </div>
+
+    <script>
+        // Define the S3 URLs for each batch's JSON file
+ const batchUrls = {
+    batch1: 'https://job-scraper-bucket-project.s3.amazonaws.com/scraped_jobs_batch1.json',
+    batch2: 'https://job-scraper-bucket-project.s3.amazonaws.com/scraped_jobs_batch2.json',
+    batch3: 'https://job-scraper-bucket-project.s3.amazonaws.com/scraped_jobs_batch3.json',
+    batch4: 'https://job-scraper-bucket-project.s3.amazonaws.com/scraped_jobs_batch4.json',
+    batch5: 'https://job-scraper-bucket-project.s3.amazonaws.com/scraped_jobs_batch5.json'
+ };
+
+        // Fetch and display jobs for each batch
+        function fetchAndDisplayJobs(batch, elementId) {
+            fetch(batchUrls[batch])
+                .then(response => response.json())
+                .then(data => {
+                    const jobList = document.getElementById(elementId);
+                    Object.keys(data).forEach(company => {
+                        data[company].forEach(job => {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td>${company}</td>
+                                <td>${job.title}</td>
+                                <td><a href="${job.link}" target="_blank">Apply Now</a></td>
+                            `;
+                            jobList.appendChild(row);
+                        });
+                    });
+                })
+                .catch(error => {
+                    console.error(`Error fetching jobs for ${batch}:`, error);
+                });
+        }
+
+        // Fetch jobs for each batch and populate the tables
+        fetchAndDisplayJobs('batch1', 'job-list-batch1');
+        fetchAndDisplayJobs('batch2', 'job-list-batch2');
+        fetchAndDisplayJobs('batch3', 'job-list-batch3');
+        fetchAndDisplayJobs('batch4', 'job-list-batch4');
+        fetchAndDisplayJobs('batch5', 'job-list-batch5');
+    </script>
+
+</body>
+</html>
