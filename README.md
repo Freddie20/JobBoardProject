@@ -16,17 +16,20 @@ This project showcases an automated web scraping pipeline built with AWS Lambda 
 
 
 ### Technologies Used 💻
-
-- **Python**: The core programming language used for the scraping scripts.
-- **Selenium**: For automating browser interactions and handling dynamically loaded content.
-- **BeautifulSoup**: For parsing HTML and extracting data.
-- **XPath & CSS Selectors**: For precise and flexible data extraction from HTML elements.
-- **HTML, CSS, JavaScript**: For the static website.
-- **AWS Lambda**: To run scraping logic.
-- **Docker**: To package and deploy Lambda.
-- **AWS S3**: For job data storage and website hosting.
-- **AWS CloudWatch**: To schedule automated scraping.
-- **AWS SNS**: To send job alerts to users.
+```markdown
+| **Technology**        | **Description**                                                                 |
+|-----------------------|---------------------------------------------------------------------------------|
+| **Python**            | The core programming language used for the scraping scripts.                    |
+| **Selenium**          | For automating browser interactions and handling dynamically loaded content.    |
+| **BeautifulSoup**     | For parsing HTML and extracting data from web pages.                            |
+| **XPath & CSS Selectors** | For precise and flexible data extraction from HTML elements.               |
+| **HTML, CSS, JavaScript** | For building the static website interface to display job listings.          |
+| **AWS Lambda**        | To run the scraping logic as a serverless function in the cloud.                 |
+| **Docker**            | Used to package and deploy the Lambda function with all dependencies.            |
+| **AWS S3**            | For storing job data and hosting the static website.                            |
+| **AWS CloudWatch**     | To schedule automated scraping tasks at regular intervals.                      |
+| **AWS SNS**           | To send job alerts to users via email or SMS.                                    |                               |
+```
 
 Key Features 🔑
 
@@ -37,7 +40,7 @@ Key Features 🔑
 
 ### Live Demo 🌐
 
-- Static Website URL: Visit the Job Board 
+- Static Website URL: [Visit the Job Board](http://job-scraper-bucket-project.s3-website-us-east-1.amazonaws.com/).
 
 ### Prerequisites
 
@@ -185,6 +188,6 @@ Feel free to explore the code and adapt it to your needs. Let us know if you enc
 **Author:** ✍️
 
 - Freda Victor
-- Project Blog: [GitHub Repository Link]
+- [Project Blog](https://learndataengineering.hashnode.dev/building-an-automated-job-scraping-system-on-aws-challenges-solutions-and-insights).
 - Date: September 2024
 
